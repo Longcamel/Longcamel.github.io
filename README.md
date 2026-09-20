@@ -19,6 +19,12 @@ git branch -M main && git push -u origin main
 ```
 约 1 分钟后访问 `https://<你的用户名>.github.io`。
 
+## 中英文切换
+页面右上角有 **中文 / EN** 切换按钮（纯 JS 实现，无需刷新）。
+- 原理：每处文字同时写有 `<span class="le">英文</span><span class="lz">中文</span>`，按钮切换 `body.zh` 类，CSS 控制显示哪套。
+- **以后更新内容时记得同时改两份**（le=英文，lz=中文），选择记忆在浏览器 localStorage。
+- 新增条目照抄现有条目的双语 span 结构即可。
+
 ## 待办（TODO，index.html 内有注释标记）
 1. 替换真实头像照片
 2. 取消注释并填写 GitHub / Google Scholar / LinkedIn 链接

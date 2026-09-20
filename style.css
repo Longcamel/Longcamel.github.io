@@ -108,3 +108,26 @@ footer {
   .container { grid-template-columns: 1fr; }
   a { color: var(--ink); }
 }
+
+/* ===== Language toggle (EN/中文) ===== */
+.lz { display: none; }
+body.zh .le { display: none; }
+body.zh .lz { display: inline; }
+
+#langToggle {
+  position: fixed;
+  top: 16px;
+  right: 20px;
+  z-index: 99;
+  font-family: inherit;
+  font-size: 13px;
+  padding: 5px 14px;
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  background: var(--bg);
+  color: var(--accent);
+  cursor: pointer;
+}
+#langToggle:hover { background: var(--accent); color: var(--bg); }
+
+@media print { #langToggle { display: none; } }
