@@ -114,6 +114,13 @@ footer {
 body.zh .le { display: none; }
 body.zh .lz { display: inline; }
 
+/* contact 标签是 inline-block，特异性更高，需单独覆盖，确保单语显示 */
+.contact .label.lz { display: none; }
+body.zh .contact .label.le { display: none; }
+body.zh .contact .label.lz { display: inline-block; }
+/* 中文标签更短，收窄宽度保持取值对齐 */
+body.zh .contact .label { width: 52px; }
+
 #langToggle {
   position: fixed;
   top: 16px;
