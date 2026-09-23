@@ -165,15 +165,9 @@ a:hover {
   flex-direction: column;
   gap: 4px;
   font-size: 0.95rem;
-}
-
-.nav-title {
-  margin: 0 0 8px;
-  font-size: 0.82rem;
-  font-weight: bold;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--muted);
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
 }
 
 .nav a {
@@ -316,11 +310,6 @@ footer {
     flex-wrap: wrap;
     justify-content: center;
     gap: 12px;
-  }
-
-  .nav-title {
-    width: 100%;
-    text-align: center;
   }
 
   .nav a {
