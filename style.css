@@ -104,15 +104,6 @@ body {
   text-align: left;
 }
 
-.card-title {
-  margin: 0 0 14px;
-  font-size: 0.82rem;
-  font-weight: bold;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
-
 .contact {
   list-style: none;
   padding: 0;
@@ -176,12 +167,26 @@ a:hover {
   font-size: 0.95rem;
 }
 
-.nav a {
+.nav-title {
+  margin: 0 0 8px;
+  font-size: 0.82rem;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: var(--muted);
+}
+
+.nav a {
+  color: var(--ink);
+  padding: 3px 0 3px 12px;
+  border-left: 3px solid var(--line);
+  text-decoration: none;
 }
 
 .nav a:hover {
   color: var(--accent);
+  border-left-color: var(--accent);
+  text-decoration: underline;
 }
 
 /* Main */
@@ -313,8 +318,14 @@ footer {
     gap: 12px;
   }
 
+  .nav-title {
+    width: 100%;
+    text-align: center;
+  }
+
   .nav a {
     padding: 10px 6px;
+    border-left: none;
   }
 
   .contact li {
