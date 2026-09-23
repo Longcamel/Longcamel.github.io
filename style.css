@@ -97,27 +97,48 @@ body {
   color: var(--ink);
 }
 
-.tagline {
-  color: var(--muted);
-  margin: 0 0 18px;
+.contact-card {
+  margin: 26px 0 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  text-align: left;
+}
+
+.card-title {
+  margin: 0 0 14px;
+  font-size: 0.82rem;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
 }
 
 .contact {
   list-style: none;
   padding: 0;
-  margin: 0 0 18px;
+  margin: 0;
   font-size: 0.92rem;
 }
 
 .contact li {
-  margin-bottom: 7px;
+  margin-bottom: 14px;
+}
+
+.contact li:last-child {
+  margin-bottom: 0;
 }
 
 .contact .label {
-  display: inline-block;
-  width: 76px;
+  display: block;
+  margin-bottom: 2px;
+  font-size: 0.78rem;
   color: var(--muted);
   font-variant: small-caps;
+  letter-spacing: 0.04em;
+}
+
+.contact .value {
+  display: block;
 }
 
 a {
@@ -296,9 +317,8 @@ footer {
     padding: 10px 6px;
   }
 
-  .contact .label {
-    width: auto;
-    margin-right: 6px;
+  .contact li {
+    margin-bottom: 16px;
   }
 }
 
@@ -342,12 +362,20 @@ body.zh .contact .label.le {
 }
 
 body.zh .contact .label.lz {
-  display: inline-block;
+  display: block;
 }
 
-/* 中文标签更短，收窄宽度保持取值对齐 */
-body.zh .contact .label {
-  width: 52px;
+/* 联系值（location 等）的双语切换，块级显示 */
+.contact .value.lz {
+  display: none;
+}
+
+body.zh .contact .value.le {
+  display: none;
+}
+
+body.zh .contact .value.lz {
+  display: block;
 }
 
 #langToggle {
