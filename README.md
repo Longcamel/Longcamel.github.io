@@ -37,5 +37,5 @@ git branch -M main && git push -u origin main
 ## 待办（TODO，index.html 内有注释标记）
 1. 替换真实头像照片
 2. 取消注释并填写 GitHub / Google Scholar / LinkedIn 链接
-3. 获得博士学位后更新 About 与 Education
+3. 以后更新 About 与 Education
 4. 有论文发表后在 Patents 处新增 Publications 版块

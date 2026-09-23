@@ -100,7 +100,7 @@ body {
 .contact-card {
   margin: 26px 0 0;
   padding-top: 16px;
-  border-top: 1px solid var(--line);
+  border-top: 2px solid var(--line);
   text-align: left;
 }
 
@@ -167,7 +167,7 @@ a:hover {
   font-size: 0.95rem;
   margin-top: 22px;
   padding-top: 18px;
-  border-top: 1px solid var(--line);
+  border-top: 2px solid var(--line);
 }
 
 .nav a {
@@ -272,7 +272,6 @@ h2::before {
 }
 
 footer {
-  border-top: 1px solid var(--line);
   padding-top: 14px;
   color: var(--muted);
   font-size: 0.85rem;
@@ -294,7 +293,6 @@ footer {
 
   .sidebar {
     border-right: none;
-    border-bottom: 1px solid var(--line);
     padding: 0 0 20px;
     text-align: center;
   }
