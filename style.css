@@ -257,6 +257,12 @@ footer {
 
 /* Responsive */
 @media (max-width: 800px) {
+  body {
+    font-size: 15.5px;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
   .container {
     grid-template-columns: 1fr;
     gap: 28px;
@@ -271,6 +277,8 @@ footer {
   }
 
   .avatar {
+    width: 120px;
+    height: 120px;
     margin: 0 auto;
   }
 
@@ -279,6 +287,10 @@ footer {
     flex-wrap: wrap;
     justify-content: center;
     gap: 12px;
+  }
+
+  .nav a {
+    padding: 10px 6px;
   }
 
   .contact .label {
