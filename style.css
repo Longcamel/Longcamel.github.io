@@ -237,7 +237,8 @@ h2::before {
 }
 
 .pubs {
-  padding-left: 22px;
+  list-style: none;
+  padding-left: 0;
 }
 
 .pubs li {
@@ -259,7 +260,7 @@ h2::before {
   display: inline-block;
   width: 48px;
   text-indent: 0;
-  color: var(--accent);
+  color: var(--ink);
   font-weight: bold;
 }
 
