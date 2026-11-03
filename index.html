@@ -4,9 +4,66 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suyu Zhou | Homepage</title>
-  <meta name="description" content="Suyu Zhou (周苏豫) — BIM Engineer">
-  <link rel="icon" href="assets/avatar.svg" type="image/svg+xml">
+  <title>周苏豫 Suyu Zhou — 机电 BIM 工程师 / MEP BIM Engineer</title>
+  <meta name="description"
+    content="周苏豫（Suyu Zhou），中建八局四公司机电 BIM 工程师，7 年商业、医疗与超高层项目机电深化经验：管综排布、预留洞、支吊架、装配式制冷机房、企业级样板与 BIM 培训。MEP BIM engineer with 7 years of MEP detailing for commercial, healthcare and super high-rise projects.">
+  <meta name="author" content="Suyu Zhou">
+  <meta name="theme-color" content="#fdfcf9">
+  <link rel="canonical" href="https://longcamel.github.io/">
+
+  <link rel="icon" href="assets/favicon.png" type="image/png" sizes="64x64">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <!-- Open Graph / 微信、领英、Slack 分享卡片 -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="周苏豫 Suyu Zhou">
+  <meta property="og:title" content="周苏豫 Suyu Zhou — 机电 BIM 工程师">
+  <meta property="og:description" content="7 年机电深化：超高层 / 医疗 / 装配式机房。MEP BIM Engineer with 7 years of MEP detailing experience.">
+  <meta property="og:url" content="https://longcamel.github.io/">
+  <meta property="og:image" content="https://longcamel.github.io/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="周苏豫 Suyu Zhou — 机电 BIM 工程师">
+  <meta name="twitter:description" content="7 年机电深化：超高层 / 医疗 / 装配式机房。">
+  <meta name="twitter:image" content="https://longcamel.github.io/assets/og-image.png">
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "周苏豫",
+      "alternateName": "Suyu Zhou",
+      "url": "https://longcamel.github.io/",
+      "image": "https://longcamel.github.io/assets/test.jpeg",
+      "jobTitle": "MEP BIM Engineer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "China Construction Eighth Engineering Division Corp., Ltd. (4th Company)"
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Jiangsu University of Science and Technology"
+      },
+      "knowsAbout": [
+        "Building Information Modeling",
+        "MEP coordination",
+        "Prefabricated chiller plants",
+        "Revit"
+      ],
+      "knowsLanguage": ["zh-CN", "en"],
+      "award": [
+        "Second Prize (team), 11th Construction Skills Competition BIM Collaboration, CCEED, 2024",
+        "First Prize, SMART BIM Competition (Construction Group), 2022",
+        "Second Prize, 9th Longtu Cup National BIM Competition (Construction Group), 2020"
+      ],
+      "sameAs": ["https://github.com/Longcamel"]
+    }
+  </script>
+
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -17,7 +74,6 @@
     <!-- ============ SIDEBAR ============ -->
     <aside class="sidebar">
       <img class="avatar" src="assets/test.jpeg" alt="Photo of Suyu Zhou">
-      <!-- TODO: replace assets/avatar.svg with your real photo, e.g. assets/photo.jpg -->
       <h1 class="name"><span class="zh-name">周苏豫</span><span class="en-name">Suyu Zhou</span></h1>
       <section class="contact-card">
         <ul class="contact">
@@ -195,20 +251,36 @@
   <script>
     (function () {
       var KEY = 'homepage-lang';
-      function setLang(zh) {
+
+      function applyLang(zh) {
         document.body.classList.toggle('zh', zh);
         document.documentElement.lang = zh ? 'zh-CN' : 'en';
         var b = document.getElementById('langToggle');
-        if (b) b.textContent = zh ? 'EN' : '中文';
-        try { localStorage.setItem(KEY, zh ? 'zh' : 'en'); } catch (e) { }
+        if (b) {
+          b.textContent = zh ? 'EN' : '中文';
+          b.setAttribute('aria-pressed', zh ? 'true' : 'false');
+        }
       }
-      var btn = document.getElementById('langToggle');
-      if (btn) btn.addEventListener('click', function () {
-        setLang(!document.body.classList.contains('zh'));
-      });
+
+      // 优先级：用户手动选择 > 浏览器语言 > 英文
       var saved = null;
       try { saved = localStorage.getItem(KEY); } catch (e) { }
-      if (saved === 'zh') setLang(true);
+
+      var zh;
+      if (saved === 'zh' || saved === 'en') {
+        zh = saved === 'zh';
+      } else {
+        var nav = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+        zh = /^zh\b/i.test(nav);
+      }
+      applyLang(zh);
+
+      var btn = document.getElementById('langToggle');
+      if (btn) btn.addEventListener('click', function () {
+        var next = !document.body.classList.contains('zh');
+        applyLang(next);
+        try { localStorage.setItem(KEY, next ? 'zh' : 'en'); } catch (e) { }
+      });
     })();
   </script>
 </body>
